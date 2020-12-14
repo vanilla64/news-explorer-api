@@ -8,6 +8,7 @@ const { createUser, login } = require('../controllers/users');
 const { auth } = require('../middlewares/auth');
 
 const NotFoundError = require('../errors/NotFoundError');
+const { notFoundPageMsg } = require('../utils/constants');
 
 router.post('/signup', registerValidator, createUser);
 router.post('/signin', loginValidator, login);
@@ -17,10 +18,8 @@ router.use(auth);
 router.use(usersRouter);
 router.use(articleRouter);
 
-// router.get('/', (req, res) => res.send({ msg: 'hello!' }));
-
 router.use('*', () => {
-  throw new NotFoundError('Запрашиваемый ресурс не найден!');
+  throw new NotFoundError(notFoundPageMsg);
 });
 
 module.exports = router;
