@@ -1,6 +1,10 @@
+const { NODE_ENV } = process.env;
+
 module.exports.linkRegexp = /^(https?):\/\/(w{3}\.)?[^#~!@$%^&*)(\s]+\.\w+\/?([^#~!@$%^&*)(\s]+)?[#]?$/i;
 
 module.exports.JWT_DEV = 'dick-cunt-pan';
+
+module.exports.PORT = NODE_ENV === 'production' ? 3000 : 4000;
 
 module.exports.serverErrMsg = 'На сервере произошла ошибка';
 module.exports.emailExistMsg = 'Email уже зарегистрирован!';
