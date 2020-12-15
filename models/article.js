@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 const mongoose = require('mongoose');
-const { linkRegexp } = require('../utils/constants');
+const { linkRegexp, wrongUrlMsg } = require('../utils/constants');
 
 const articleSchema = new Schema({
   keyword: {
@@ -28,7 +28,7 @@ const articleSchema = new Schema({
     required: true,
     validate: {
       validator: (url) => linkRegexp.test(url),
-      message: (props) => `${props.value} некорректный URL!`,
+      message: (props) => `${props.value} ${wrongUrlMsg}`,
     },
   },
   image: {
@@ -36,14 +36,14 @@ const articleSchema = new Schema({
     required: true,
     validate: {
       validator: (url) => linkRegexp.test(url),
-      message: (props) => `${props.value} некорректный URL!`,
+      message: (props) => `${props.value} ${wrongUrlMsg}`,
     },
   },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'user',
     required: true,
-    // select: false,
+    select: false,
   },
 }, { versionKey: false });
 

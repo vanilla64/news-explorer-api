@@ -1,10 +1,10 @@
 const articleRouter = require('express').Router();
 
-const { getArticlesValidator, createArticlesValidator, articleIdValidator } = require('../utils/celebrate');
+const { createArticlesValidator, deleteArticleIdValidator } = require('../utils/celebrate');
 const { createArticle, deleteArticle, getArticles } = require('../controllers/articles');
 
-articleRouter.get('/articles', getArticlesValidator, getArticles);
+articleRouter.get('/articles', getArticles);
 articleRouter.post('/articles', createArticlesValidator, createArticle);
-articleRouter.delete('/articles/:articleId', articleIdValidator, deleteArticle);
+articleRouter.delete('/articles/:articleId', deleteArticleIdValidator, deleteArticle);
 
 module.exports = articleRouter;

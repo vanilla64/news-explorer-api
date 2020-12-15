@@ -15,3 +15,7 @@ module.exports.noSavedArticlesMsg = 'Нет сохраненных статей!
 module.exports.notDeleteNotHimselfArticleMsg = 'Нельзя удалять чужие статьи!';
 module.exports.notFoundArticleMsg = 'Статья не найдена!';
 module.exports.notFoundPageMsg = 'Запрашиваемый ресурс не найден!';
+module.exports.wrongTokenMsg = 'С токеном что-то не так!';
+module.exports.needAuthMsg = 'Необходима авторизация!';
+module.exports.tooManyRequestsMsg = 'Превышено количество запросов!';
+module.exports.wrongUrlMsg = 'некорректный URL!';

@@ -18,15 +18,6 @@ module.exports.loginValidator = celebrate({
 });
 
 // articles
-module.exports.getArticlesValidator = celebrate({
-  headers: Joi.object().keys({
-    authorization: Joi.string()
-      .pattern(/^Bearer.[A-Za-z0-9-_=]+\.[A-Za-z0-9-_=]+\.?[A-Za-z0-9-_.+/=]*$/)
-      .required(),
-  })
-    .unknown(true),
-});
-
 module.exports.createArticlesValidator = celebrate({
   body: Joi.object().keys({
     keyword: Joi.string().required(),
@@ -39,18 +30,8 @@ module.exports.createArticlesValidator = celebrate({
   }),
 });
 
-module.exports.articleIdValidator = celebrate({
+module.exports.deleteArticleIdValidator = celebrate({
   params: Joi.object().keys({
     articleId: Joi.string().min(24).max(24).hex(),
   }),
-});
-
-// users
-module.exports.getUserValidator = celebrate({
-  headers: Joi.object().keys({
-    authorization: Joi.string()
-      .pattern(/^Bearer.[A-Za-z0-9-_=]+\.[A-Za-z0-9-_=]+\.?[A-Za-z0-9-_.+/=]*$/)
-      .required(),
-  })
-    .unknown(true),
 });

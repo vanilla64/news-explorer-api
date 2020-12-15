@@ -24,9 +24,9 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(rateLimiter);
-
 app.use(requestLogger);
+
+app.use(rateLimiter);
 
 app.use('/', router);
 
