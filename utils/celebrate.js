@@ -26,7 +26,8 @@ module.exports.createArticlesValidator = celebrate({
     date: Joi.string().required(),
     source: Joi.string().required(),
     link: Joi.string().required().pattern(new RegExp(linkRegexp)),
-    image: Joi.string().required().pattern(new RegExp(linkRegexp)),
+    // image: Joi.string().required().pattern(new RegExp(linkRegexp)),
+    image: Joi.required(),
   }),
 });
 
