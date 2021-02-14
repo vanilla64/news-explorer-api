@@ -34,10 +34,10 @@ const articleSchema = new Schema({
   image: {
     type: String,
     required: true,
-    validate: {
-      validator: (url) => linkRegexp.test(url),
-      message: (props) => `${props.value} ${wrongUrlMsg}`,
-    },
+    // validate: {
+    //   validator: (url) => linkRegexp.test(url),
+    //   message: (props) => `${props.value} ${wrongUrlMsg}`,
+    // },
   },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
