@@ -19,5 +19,12 @@
 ##### Удаляет сохранённую статью  по _id
 * DELETE /articles/articleId
 
+### Используемые технологии
+* Node.js;
+* Express.js;
+* MongoDB;
+* Mongoose;
+* Nginx;
+
 ###
 ##### Сергей Машин [VK](https://vk.com/vanilla64)
